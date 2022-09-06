@@ -126,13 +126,12 @@ function wide(strDate){
 
     if(strDate === ""){
         return "";
-    }else if(strDate === "06-10-1997"){
+    }else if(strDate !== (splitedString[0] + "/" + splitedString[1] + "/" + splitedString[2])){
         return "";
     }else{
         return splitedString[0] + month + splitedString[2];
     }
 
-    
 }
 
 // Trecho utilizado pelos testes
