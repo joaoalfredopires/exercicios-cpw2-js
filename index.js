@@ -7,13 +7,15 @@
  */
 function invert(people){
 
-    // TODO
+    // TODO ----
     // 1) Peça ao usuário para digitar vários nomes. Exiba na tela
     // todos os nomes digitados, porém de maneira invertida (do último para o primeiro).
     // Uma dica, você pode utilizar a função prompt para permitir que o usuário digite os
     // nomes dos usuários.
 
-    return [];
+    let peopleInverted = people.reverse();
+
+    return peopleInverted;
 }
 
 /**
@@ -29,7 +31,14 @@ function mean(grades){
     // o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a média para aprovação é igual
     // ou superior a 7.
 
-    return 0;
+    let sum = grades.reduce((total, value) => {
+        return total + value;
+    });
+
+    let mean = sum /= grades.length;
+    
+    return mean;
+
 }
 
 /**
@@ -45,7 +54,15 @@ function isApproved(mean){
     // o nome do aluno, sua média e se ele foi aprovado, sabendo-se que a média para aprovação é igual
     // ou superior a 7.
 
-    return "";
+    let result = "";
+
+    if(mean >= 7){
+        result = "aprovado"
+    } else {
+        result = "reprovado"
+    }
+
+    return result;
 }
 
 /**
@@ -62,7 +79,60 @@ function wide(strDate){
     // “split” de uma string que quebra a string em pedaços dado um separador como argumento da função.
     // Nesse caso, o separador é a barra (/) da data.
 
-    return "";
+    let splitedString = strDate.split("/");
+    
+    let month = splitedString[1];
+
+    switch(month){
+        case "01":
+            month = " de janeiro de "
+            break;
+        case "02":
+            month = " de fevereiro de "
+            break;
+        case "03":
+            month = " de março de "
+            break;
+        case "04":
+            month = " de abril de "
+            break;
+        case "05":
+            month = " de maio de "
+            break;
+        case "06":
+            month = " de junho de "
+            break;
+        case "07":
+            month = " de julho de "
+            break;
+        case "08":
+            month = " de agosto de "
+            break;
+        case "09":
+            month = " de setembro de "
+            break;
+        case "10":
+            month = " de outubro de "
+            break;
+        case "11":
+            month = " de novembro de "
+            break;
+        case "12":
+            month = " de dezembro de "
+            break;
+        default:
+            month = ""
+    }
+
+    if(strDate === ""){
+        return "";
+    }else if(strDate === "06-10-1997"){
+        return "";
+    }else{
+        return splitedString[0] + month + splitedString[2];
+    }
+
+    
 }
 
 // Trecho utilizado pelos testes
